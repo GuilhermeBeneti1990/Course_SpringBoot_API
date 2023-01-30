@@ -20,6 +20,7 @@ public class Course implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public Course() {
+        this.courseValue = new BigDecimal(0);
     }
 
     public Course(String name, String area) {

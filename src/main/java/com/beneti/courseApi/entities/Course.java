@@ -10,8 +10,6 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "college_courses")
@@ -53,8 +51,6 @@ public class Course implements Serializable {
     @Transient
     private BigDecimal courseValue;
 
-    @OneToMany(mappedBy = "course")
-    private List<Student> students = new ArrayList<>();
 
     @PostPersist
     private void postPersistData() {
@@ -120,14 +116,6 @@ public class Course implements Serializable {
 
     public void setCourseValue(BigDecimal courseValue) {
         this.courseValue = courseValue;
-    }
-
-    public List<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(List<Student> students) {
-        this.students = students;
     }
 
     @Override
